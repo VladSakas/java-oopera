@@ -65,7 +65,6 @@ public class Theatre {
         System.out.println("~ ".repeat(40));
 
         // 5 заменяем актёра в одном из спектаклей на существующего из другого спектакля и вывести список
-        System.out.println("ЗАДАНИЕ С ЗАМЕНОЙ");
         System.out.println("# ".repeat(40));
         System.out.println("Попытка замены на существующего актёра...");
         opera.replaceActor(actor1, "Гослинг");
