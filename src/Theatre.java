@@ -1,10 +1,10 @@
-import persons.Actor;
-import persons.Director;
-import persons.Gender;
-import persons.Person;
-import shows.Show;
-import shows.musical_shows.Ballet;
-import shows.musical_shows.Opera;
+import people.Actor;
+import people.Director;
+import people.Gender;
+import people.Person;
+import show.Show;
+import show.Ballet;
+import show.Opera;
 
 import java.util.ArrayList;
 
@@ -30,9 +30,9 @@ public class Theatre {
         Opera opera = new Opera("Травиата", 160, director2, new ArrayList<Actor>(), musicAuthor,
                                 "Молодой Альфред влюбляется в умирающую от чахотки куртизанку Виолетту,\n" +
                                         "они сбегают в загородный дом, но под давлением его отца\n" +
-                                        " она жертвует счастьем ради репутации семьи,\n" +
-                                        " что приводит к публичному скандалу, смертельной болезни\n" +
-                                        " и их воссоединению лишь у её смертного одра.", 200);
+                                        "она жертвует счастьем ради репутации семьи,\n" +
+                                        "что приводит к публичному скандалу, смертельной болезни\n" +
+                                        "и их воссоединению лишь у её смертного одра.", 200);
 
         Ballet ballet = new Ballet("Лебединое озеро", 150, director1, new ArrayList<Actor>(), musicAuthor,
                                     "Принц Зигфрид влюбляется в заколдованную девушку-лебедя Одетту,\n" +
@@ -40,7 +40,6 @@ public class Theatre {
                                             "в финальной битве со злым волшебником освобождает возлюбленную\n" +
                                             "от чар ценой собственной жизни, соединяясь с ней в потустороннем мире.",
                                     choreographer);
-
         // 3 Распределяем актёров по спектаклям
         ordinaryShow.addActor(actor1);
         ordinaryShow.addActor(actor2);
@@ -63,12 +62,16 @@ public class Theatre {
         System.out.println("Список актёров '" + ballet.getTitle() + "':");
         System.out.println("~ ".repeat(40));
         ballet.printListOfActors();
+        System.out.println("~ ".repeat(40));
 
         // 5 заменяем актёра в одном из спектаклей на существующего из другого спектакля и вывести список
-        opera.replaceActor(actor3, "Невский-Шварцнеггер");
+        System.out.println("ЗАДАНИЕ С ЗАМЕНОЙ");
         System.out.println("# ".repeat(40));
-        System.out.println("Произошла замена актёра в '" + opera.getTitle() + "'! Новый список актёров:");
+        System.out.println("Попытка замены на существующего актёра...");
+        opera.replaceActor(actor1, "Гослинг");
         System.out.println("# ".repeat(40));
+        System.out.println("Актуальный список актёров '" + opera.getTitle() + "':");
+
         opera.printListOfActors();
 
         // 6 заменяем несуществующего актёра
