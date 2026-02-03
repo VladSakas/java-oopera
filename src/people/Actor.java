@@ -1,4 +1,4 @@
-package persons;
+package people;
 
 import java.util.Objects;
 
@@ -18,14 +18,13 @@ public class Actor extends Person {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Actor actor = (Actor) o;
-        return height == actor.height &&
-                Objects.equals(getName(), actor.getName()) &&
-                Objects.equals(getSurname(), actor.getSurname());
+        return height == actor.height;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(height);
+        return Objects.hash(super.hashCode(), height);
     }
 }
