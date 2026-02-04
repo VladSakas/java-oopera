@@ -40,17 +40,18 @@ public class Show {
             return;
         }
         for (Actor actor : listOfActors) {
-           if (actorSurname.equals(actor.getSurname())) {
-               listOfActors.set(listOfActors.indexOf(actor), newActor);
-               actorFound = true;
-               System.out.println("Произошла замена: " + newActor.getSurname() + " выступит вместо " + actorSurname);
-               break;
-           }
-       }
-       if (!actorFound) {
-           System.out.println(actorSurname + " - актёр в списке не обнаружен, заменять некого!");
-       }
+            if (actorSurname.equals(actor.getSurname())) {
+                listOfActors.set(listOfActors.indexOf(actor), newActor);
+                actorFound = true;
+                System.out.println("Произошла замена: " + newActor.getSurname() + " выступит вместо " + actorSurname);
+                break;
+            }
+        }
+        if (!actorFound) {
+            System.out.println(actorSurname + " - актёр в списке не обнаружен, заменять некого!");
+        }
     }
+
     public void printDirector() {
         System.out.println(director);
     }
